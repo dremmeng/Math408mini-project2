@@ -1,0 +1,83 @@
+% LaTeX Article Template - customizing page format
+%
+% LaTeX document uses 10-point fonts by default.  To use
+% 11-point or 12-point fonts, use \documentclass[11pt]{article}
+% or \documentclass[12pt]{article}.
+\documentclass{article}
+
+% Set left margin - The default is 1 inch, so the following 
+% command sets a 1.25-inch left margin.
+\setlength{\oddsidemargin}{0.25in}
+
+% Set width of the text - What is left will be the right margin.
+% In this case, right margin is 8.5in - 1.25in - 6in = 1.25in.
+\setlength{\textwidth}{6in}
+
+% Set top margin - The default is 1 inch, so the following 
+% command sets a 0.75-inch top margin.
+\setlength{\topmargin}{-0.25in}
+
+% Set height of the text - What is left will be the bottom margin.
+% In this case, bottom margin is 11in - 0.75in - 9.5in = 0.75in
+\setlength{\textheight}{8in}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\parskip}{5pt} 
+\pagestyle{fancyplain}
+% Set the beginning of a LaTeX document
+\begin{document}
+
+\lhead{Drew Remmenga MATH 408}
+\rhead{Project \#2}
+%\lhead{Independent Study}
+%\rhead{R Lab}
+
+\begin{enumerate}
+
+\item 
+The function:
+\begin{equation*}
+\begin{split}
+f(t,u) = u^{2}e^{-t^{2}}sin(t)
+\end{split}
+\end{equation*}
+is Lipschitz continous in $u$ on:
+\begin{equation*}
+\begin{split}
+ \mathcal{D} =\{(t,u): t\in \mathbb{R}, u \in [0,2]\}
+\end{split}
+\end{equation*}
+if 
+\begin{equation*}
+\begin{split}
+\exists L \in \mathbb{R_{+}} : \left|f(t,u) -f(t,u^{*}) \right| & \leq L \left| u - u^{*} \right| \\
+\left|  u^{2}e^{-t^{2}}sin(t) - u^{*2}e^{-t^{2}}sin(t)  \right|  &\leq L \left| u - u^{*} \right| \\
+\left|  u^{2}- u^{*2}  \right| \left|e^{-t^{2}}sin(t)\right|  &\leq L \left| u - u^{*} \right| \\
+\left|  u- u^{*}  \right| \left|u+u^{*}\right| \left|e^{-t^{2}}sin(t)\right|  &\leq L \left| u - u^{*} \right| \\
+\end{split}
+\end{equation*}
+Since $f(t,u)$ is differentiable with respect to $u$ then we can set the Lipschitz constant:
+\begin{equation*}
+\begin{split}
+L &= \max_{(t,u) \in \mathcal{D}} \left| f_{u}(t,u) \right| \\
+& =  \max_{(t,u) \in \mathcal{D}} \left| 2ue^{-t^{2}}sin(t) \right| \\
+&\approx 4*.397 \\
+& \approx 1.588 \\
+\end{split}
+\end{equation*}
+\item
+\begin{enumerate}
+\item
+Since $f(u)$ is differentible at all points $u \in \mathbb{R}$ $f(u)$ is Lipshitz at every point $u \in \mathbb{R}$.
+With L $\leq$ 2.
+\item
+Take Dirchlet's 'jaggged' discontinuous function which is continuous nowhere and is differentiable nowhere but is nonetheless bounded by 1.
+\end{enumerate}
+\end{enumerate}
+
+
+
+\end{document}

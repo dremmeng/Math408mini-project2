@@ -59,7 +59,7 @@ if
 \left|  u- u^{*}  \right| \left|u+u^{*}\right| \left|e^{-t^{2}}sin(t)\right|  &\leq L \left| u - u^{*} \right| \\
 \end{split}
 \end{equation*}
-Since $f(t,u)$ is differentiable with respect to $u$ then we can set the Lipschitz constant:
+Since $f(t,u)$ is differentiable with respect to $u$ and bounded in $\mathcal{D}$ then we can set the Lipschitz constant:
 \begin{equation*}
 \begin{split}
 L &= \max_{(t,u) \in \mathcal{D}} \left| f_{u}(t,u) \right| \\
@@ -71,11 +71,29 @@ L &= \max_{(t,u) \in \mathcal{D}} \left| f_{u}(t,u) \right| \\
 \item
 \begin{enumerate}
 \item
-Since $f(u)$ is differentible at all points $u \in \mathbb{R}$ $f(u)$ is Lipshitz at every point $u \in \mathbb{R}$.
+Since $f(u)$ is differentible at all points $u \in \mathbb{R}$, $f(u)$ is Lipshitz at every point $u \in \mathbb{R}$.
 With L $\leq$ 2.
 \item
-Take Dirchlet's 'jaggged' discontinuous function which is continuous nowhere and is differentiable nowhere but is nonetheless bounded by 1.
+Take Dirchlet's 'jagged' discontinuous function which is continuous nowhere and is differentiable nowhere but is nonetheless bounded by 1.
 \end{enumerate}
+\item
+\begin{equation*}
+\begin{split}
+U  &=
+\begin{bmatrix}
+u_{1}& 0& 0& 0 \\
+0 & u_{2} & 0 & 0 \\
+0 & 0 & u_{3} & 0 \\
+0 & 0 & 0 & u_{4}
+\end{bmatrix} \\
+U' &= \begin{bmatrix}
+u_{2} & 0 & 0 & 0 \\
+0 & -\frac{u_{1}}{(u_{1}^{2}+u_{3}^{2})^{3/2}} & 0 & 0 \\
+0 & 0 &  u_{4} & 0 \\
+0 & 0 & 0 & -\frac{u_{3}}{(u_{1}^{2}+u_{3}^{2})^{3/2}}
+\end{bmatrix}
+\end{split}
+\end{equation*}
 \end{enumerate}
 
 

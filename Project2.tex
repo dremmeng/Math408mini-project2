@@ -79,21 +79,48 @@ Take Dirchlet's 'jagged' discontinuous function which is continuous nowhere and 
 \item
 \begin{equation*}
 \begin{split}
-U  &=
+f  &=
 \begin{bmatrix}
-u_{1}& 0& 0& 0 \\
-0 & u_{2} & 0 & 0 \\
-0 & 0 & u_{3} & 0 \\
-0 & 0 & 0 & u_{4}
+u_{2} \\
+-\frac{u_{1}}{(u_{1}^{2}+u_{3}^{2})^{3/2}} \\
+u_{4}  \\
+-\frac{u_{3}}{(u_{1}^{2}+u_{3}^{2})^{3/2}}
 \end{bmatrix} \\
-U' &= \begin{bmatrix}
-u_{2} & 0 & 0 & 0 \\
-0 & -\frac{u_{1}}{(u_{1}^{2}+u_{3}^{2})^{3/2}} & 0 & 0 \\
-0 & 0 &  u_{4} & 0 \\
-0 & 0 & 0 & -\frac{u_{3}}{(u_{1}^{2}+u_{3}^{2})^{3/2}}
-\end{bmatrix}
+J(f) &= \begin{bmatrix}
+0 & 1 & 0 & 0 \\
+\frac{-2u_{1}^{2}+u_{3}^{2}}{(u_{1}^{2}+u_{3}^{2})^{5/2}} & 0 & \frac{-3u_{1}u_{3}}{(u_{1}^{2}+u_{3}^{2})^{5/2}} & 0 \\
+0 & 0 & 0 & 1 \\
+ \frac{-3u_{1}u_{3}}{(u_{1}^{2}+u_{3}^{2})^{5/2}} & 0 & \frac{-2u_{3}^{2}+u_{1}^{2}}{(u_{1}^{2}+u_{3}^{2})^{5/2}} & 0 \\
+\end{bmatrix} \\
 \end{split}
 \end{equation*}
+\begin{equation*}
+\begin{split}
+\left|\left| A\right|\right|_{F} & = \sqrt{\sum_{i}\sum_{j} \left| A_{ij} \right |^{2} } \\
+\left|\left| A\right|\right|_{F} & = \sqrt{ 1^{2} + (\frac{-2u_{1}^{2}+u_{3}^{2}}{(u_{1}^{2}+u_{3}^{2})^{5/2}})^{2}+(\frac{3u_{1}u_{3}}{(u_{1}^{2}+u_{3}^{2})^{5/2}})^{2}+1^{2} +( \frac{3u_{1}u_{3}}{(u_{1}^{2}+u_{3}^{2})^{5/2}})^{2}+(\frac{-2u_{3}^{2}+u_{1}^{2}}{(u_{1}^{2}+u_{3}^{2})^{5/2}})^{2}}\\
+\left|\left| A\right|\right|_{F} & = \sqrt{ 2 + \frac{4u_{1}^{4}+u_{3}^{4}-4u_{1}^{2}u_{3}^{2}}{(u_{1}^{2}+u_{3}^{2})^{5}}+\frac{18u_{1}^{2}u_{3}^{2}}{(u_{1}^{2}+u_{3}^{2})^{5}} +\frac{4u_{3}^{4}+u_{1}^{4}-4u_{3}^{2}u_{1}^{2}}{(u_{1}^{2}+u_{3}^{2})^{5}}}\\
+\left|\left| A\right|\right|_{F} & = \sqrt{ 2 + \frac{5u_{3}^{4}+5u_{1}^{4}+10u_{3}^{2}u_{1}^{2}}{(u_{1}^{2}+u_{3}^{2})^{5}}}\\
+\left|\left| A\right|\right|_{F} & = \sqrt{ 2 + \frac{5}{(u_{1}^{2}+u_{3}^{2})^{3}}}\\
+(\left|\left| A\right|\right|_{F})^{2} & = 2 + \frac{5}{(u_{1}^{2}+u_{3}^{2})^{3}}\\
+(\left|\left| A\right|\right|_{F})^{2}-2 & = \frac{5}{(u_{1}^{2}+u_{3}^{2})^{3}}\\
+(u_{1}^{2}+u_{3}^{2})^{3} & = \frac{5}{(\left|\left| A\right|\right|_{F})^{2}-2}\\
+\end{split}
+\end{equation*}
+\begin{equation*}
+\begin{split}
+\mathcal{D} := \{u: 1/4 \leq u_{1}^{2} + u_{3}^{2} \}
+\end{split}
+\end{equation*}
+Apply this domain and we achieve an upper bound on $(\left|\left| A\right|\right|_{F})^{2}$
+\begin{equation*}
+\begin{split}
+(\frac{1}{4})^{3} & \leq \frac{5}{(\left|\left| A\right|\right|_{F})^{2}-2}\\
+(\left|\left| A\right|\right|_{F})^{2} &\leq 322
+\end{split}
+\end{equation*}
+And is therefore Lipschitz.
+\item
+
 \end{enumerate}
 
 

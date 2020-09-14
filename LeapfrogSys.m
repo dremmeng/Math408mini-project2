@@ -22,23 +22,14 @@ converged = 1;
 tol = 10^(-12);
 % Initialize with forward step
 V= U0;
-fvalue = f(tvec(2),V);
+fvalue = f(tvec(1),V);
 V = Uvec(:,1)+k.*fvalue(:);
 Uvec(:,2) = V;
 %go into leapfrog method
 for n = 2:N-1
-    converged =1;
-    iter = 1;% time stepping
-      while (converged > tol) && (iter < 10) % fixed point iteration to solve implicit problem (don't forget to initialize V and set tolerance tol)
-          fvalue = f(tvec(n),V);
-          V = Uvec(:,n-1)+2.*k.*fvalue(:);
-          if iter > 1
-              converged = norm(Vold-V, 'inf');
-          end
-          Vold = V;
-          iter = iter +1;
-      end
-      Uvec(:,n+1) = V;
+     fvalue = f(tvec(n),V);
+     V = Uvec(:,n-1)+2.*k.*fvalue(:);
+     Uvec(:,n+1) = V;
 end
 tvec = tvec';        % to match MATLAB output
 Uvec = Uvec';
